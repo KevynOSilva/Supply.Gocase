@@ -5,35 +5,182 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Supply Chain Gocase</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 50px;
-    }
-    h1 {
-      font-size: 2.5em;
-    }
-    ul {
-      list-style: none;
+    * {
+      margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
-    li {
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffffff;
+      color: #20124d;
+    }
+    header {
+      background-color: #20124d;
+      color: #ffffff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 5px;
+    }
+    header p {
+      font-size: 1.2em;
+      color: #ffffff;
+    }
+    main {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .cards-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .card {
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      width: 260px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card a,
+    .card button {
+      text-decoration: none;
+      color: #20124d;
+      font-weight: bold;
+      font-size: 1.1em;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .card a:hover,
+    .card button:hover {
+      color: #ff6d01;
+    }
+    ul.links {
+      list-style: none;
+      margin-top: 40px;
+    }
+    ul.links li {
       margin: 10px 0;
     }
-    a {
+    ul.links a {
       text-decoration: none;
-      color: #0366d6;
+      color: #ff6d01;
+      font-size: 1.1em;
+      transition: color 0.3s;
+    }
+    ul.links a:hover {
+      color: #20124d;
+    }
+    .sub-options {
+      display: none;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .sub-options .card {
+      width: 200px;
+    }
+    footer {
+      background-color: #f1f5f9;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.95em;
+      color: #6b7280;
+      border-top: 1px solid #e5e7eb;
+    }
+    footer a {
+      color: #ff6d01;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const botaoRequisicoes = document.getElementById('botao-requisicoes');
+      botaoRequisicoes.addEventListener('click', function() {
+        const sub = document.getElementById('sub-requisicoes');
+        sub.style.display = sub.style.display === 'flex' ? 'none' : 'flex';
+      });
+    });
+  </script>
 </head>
 <body>
-  <h1>Kevyn Silva</h1>
-  <p>Analista de Dados e Planejamento</p>
-  <ul>
-    <li><a href="https://www.linkedin.com/in/seu-perfil" target="_blank">LinkedIn</a></li>
-    <li><a href="https://github.com/seu-usuario" target="_blank">GitHub</a></li>
-    <li><a href="mailto:seu-email@example.com">Email</a></li>
-  </ul>
-  <p>Desenvolvido por Kevyn Silva</p>
+  <header>
+    <h1>Gocase</h1>
+    <p>Supply Chain</p>
+  </header>
+  <main>
+    <h2>Gestão de Dados</h2>
+    <p>Planejamento | Importações | Compras</p>
+
+    <div class="cards-row">
+      <div class="card">
+        <a href="https://app.powerbi.com/view?r=eyJrIjoiNGE2NDQxMTAtM2I5MC00ZmU1LWJlOGYtZWJjMThhN2M4NTAzIiwidCI6ImJmYzQ4MjM3LTJjZjUtNDczZS1hMGYyLTQyZTA5ZjE3NmZkMiJ9" target="_blank">
+          📊 Importações
+        </a>
+      </div>
+      <div class="card">
+        <a href="#" target="_blank">
+          🧐 S&OP Operações
+        </a>
+      </div>
+      <div class="card">
+        <a href="#" target="_blank">
+          📦 S&OP Stockout
+        </a>
+      </div>
+    </div>
+    <div class="cards-row">
+      <div class="card">
+        <a href="https://docs.google.com/spreadsheets/d/1WI41yhvTq0WF0WDCDTdXiE_6sZ-d4tiX3ih2ukFOXaM/edit?usp=sharing" target="_blank">
+          🔁 Reposições (Site - CX)
+        </a>
+      </div>
+      <div class="card">
+        <button id="botao-requisicoes">
+          📝 Requisições
+        </button>
+      </div>
+      <div class="card">
+        <a href="https://app.powerbi.com/view?r=eyJrIjoiOGJhZDY5NmMtMDBiMC00YWNhLTg4MTQtNzA1MzI2ODYyOGE5IiwidCI6ImJmYzQ4MjM3LTJjZjUtNDczZS1hMGYyLTQyZTA5ZjE3NmZkMiJ9" target="_blank">
+          📈 Vendas
+        </a>
+      </div>
+    </div>
+
+    <div id="sub-requisicoes" class="sub-options">
+      <div class="card">
+        <a href="#" target="_blank">🛒 AZ</a>
+      </div>
+      <div class="card">
+        <a href="#" target="_blank">🏢 B2B</a>
+      </div>
+      <div class="card">
+        <a href="#" target="_blank">🏬 Lojas</a>
+      </div>
+    </div>
+
+    <ul class="links">
+      <li><a href="#">Links Externos (Configurar) </a></li>
+    </ul>
+  </main>
+  <footer>
+    Desenvolvido por Kevyn Silva • Analista de Dados e Planejamento • <a href="https://wa.me/5585974017237" target="_blank">Fale comigo no WhatsApp</a>
+  </footer>
 </body>
 </html>
