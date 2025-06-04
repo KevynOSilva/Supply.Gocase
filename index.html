@@ -83,16 +83,6 @@
     ul.links a:hover {
       color: #20124d;
     }
-    .sub-options {
-      display: none;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 20px;
-      flex-wrap: wrap;
-    }
-    .sub-options .card {
-      width: 200px;
-    }
     footer {
       background-color: #f1f5f9;
       text-align: center;
@@ -109,15 +99,6 @@
       text-decoration: underline;
     }
   </style>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const botaoRequisicoes = document.getElementById('botao-requisicoes');
-      botaoRequisicoes.addEventListener('click', function() {
-        const sub = document.getElementById('sub-requisicoes');
-        sub.style.display = sub.style.display === 'flex' ? 'none' : 'flex';
-      });
-    });
-  </script>
 </head>
 <body>
   <header>
@@ -131,30 +112,35 @@
     <div class="cards-row">
       <div class="card">
         <a href="https://app.powerbi.com/view?r=eyJrIjoiNGE2NDQxMTAtM2I5MC00ZmU1LWJlOGYtZWJjMThhN2M4NTAzIiwidCI6ImJmYzQ4MjM3LTJjZjUtNDczZS1hMGYyLTQyZTA5ZjE3NmZkMiJ9" target="_blank">
-          📊 Importações
+          📊 BI Importações
         </a>
       </div>
       <div class="card">
-        <a href="#" target="_blank">
-          🧐 S&OP Operações
-        </a>
-      </div>
-      <div class="card">
-        <a href="#" target="_blank">
-          📦 S&OP Stockout
+        <a href="https://app.powerbi.com/view?r=eyJrIjoiNTM1NDNiOWUtN2MzNi00MjAyLWFjY2EtMThlYmFmMTlhNGJhIiwidCI6ImJmYzQ4MjM3LTJjZjUtNDczZS1hMGYyLTQyZTA5ZjE3NmZkMiJ9&embedImagePlaceholder=true" target="_blank">
+          📈 BI Compras
         </a>
       </div>
     </div>
+
+    <div class="cards-row">
+      <div class="card">
+        <a href="https://app.powerbi.com/view?r=eyJrIjoiYTVhNmRmYzktYWE5NS00NjJlLThkNDQtNzkzOTdjZjYxYzc5IiwidCI6ImJmYzQ4MjM3LTJjZjUtNDczZS1hMGYyLTQyZTA5ZjE3NmZkMiJ9" target="_blank">
+         📦 Consultar Estoques
+        </a>
+      </div>
+      <div class="card">
+        <a href="#" target="_blank">
+           🧐 S&OP Stockout
+        </a>
+      </div>
+    </div>
+
+
     <div class="cards-row">
       <div class="card">
         <a href="https://docs.google.com/spreadsheets/d/1WI41yhvTq0WF0WDCDTdXiE_6sZ-d4tiX3ih2ukFOXaM/edit?usp=sharing" target="_blank">
           🔁 Reposições (Site - CX)
         </a>
-      </div>
-      <div class="card">
-        <button id="botao-requisicoes">
-          📝 Requisições
-        </button>
       </div>
       <div class="card">
         <a href="https://app.powerbi.com/view?r=eyJrIjoiOGJhZDY5NmMtMDBiMC00YWNhLTg4MTQtNzA1MzI2ODYyOGE5IiwidCI6ImJmYzQ4MjM3LTJjZjUtNDczZS1hMGYyLTQyZTA5ZjE3NmZkMiJ9" target="_blank">
@@ -163,15 +149,18 @@
       </div>
     </div>
 
-    <div id="sub-requisicoes" class="sub-options">
+    <hr style="margin: 50px auto; width: 80%; border: 1px solid #ddd;">
+
+    <h2>Requisições</h2>
+    <div class="cards-row">
+      <div class="card">
+        <a href="#" target="_blank">🏬 Lojas</a>
+      </div>
       <div class="card">
         <a href="#" target="_blank">🛒 AZ</a>
       </div>
       <div class="card">
         <a href="#" target="_blank">🏢 B2B</a>
-      </div>
-      <div class="card">
-        <a href="#" target="_blank">🏬 Lojas</a>
       </div>
     </div>
 
